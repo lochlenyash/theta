@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="/css/message.css">
+		
+		
+		<script>
+		
+<!-- function randomTime(start, end) {
+    // get the difference between the 2 dates, multiply it by 0-1, 
+    // and add it to the start date to get a new date 
+<!--     var diff =  end.getTime() - start.getTime();
+<!--     var new_diff = diff * Math.random();
+<!--     var date = new Date(start.getTime() + new_diff);
+<!--     return date;
+<!-- }	 --> -->
+
+function line() {
+   return  new Date(new Date('2021-05-17T09:00').getTime() + Math.random() * (new Date('2021-05-21T17:00').getTime() - new Date('2021-05-14T09:00').getTime())).toGMTString(); 
+} 
+ 
+		
+function submitToAPI(e) {
+       e.preventDefault();
+//       var URL = "API Gateway";
+
+	   var centers = document.getElementById("centers-input").value;
+	   var time = line();
+	   var pps = document.getElementById("pps-input").value;
+	   var name = document.getElementById("name-input").value;
+	   var email = document.getElementById("email-input").value;
+       var phone = document.getElementById("phone-input").value;
+	   var address = document.getElementById("address-input").value;
+	      
+	   
+	   if (centers=="" || pps=="" || name=="" || email=="" || phone=="" || address=="")
+        {
+            alert("You must complete all fields to get an appointment");
+            return false;
+        }
+		
+				
+		emailRE = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+		if(!emailRE.test(email)) {
+			alert("Email Address entered, is not valid");
+				return false;
+		}
+       var data = {
+          centers : centers,
+		  time : time,
+		  pps : pps,
+		  name : name,
+		  email : email,
+		  phone : phone,
+		  address : address
+        };
+
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("POST", "https://zrdwb487pk.execute-api.eu-west-1.amazonaws.com/prod/contact");
+		xmlhttp.setRequestHeader("Content-Type", "application/json");
+		xmlhttp.send(JSON.stringify(data));
+		xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState === 4) {
+			var response = JSON.parse(xmlhttp.responseText);
+			if (xmlhttp.status === 200 ) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h1>Please check you email/mobile for appointment confirmation</h1>";
+		    } else {
+			    console.log('failed');
+			}
+		}
+	}
+	
+	document.getElementById('contact-form').reset();
+	  
+	} 
+</script>
+    </head>
+    <body>
+	
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+<form id="contact-form" method="post">
+
+        <div id="noCognitoMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                </div>
+                <div class="panel-body">
+                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <header>
+          <img src="images/covax.jpg">
+        </header> 
+
+
+        <section class="form-wrap">
+            <h1>Covid19 Vaccine Booking Form</h1>
+          
+		<center><h2 class="heading">Choose your nearest vaccine center</h2>
+		
+		
+		<select id="centers-input" name="centers">
+		<option value="Cork - City Hall">Cork - City Hall</option>
+		<option value="Cork - Páirc Uí Chaoimh">Cork - Páirc Uí Chaoimh</option>
+		<option value="Waterford - WIT Arena">Waterford - WIT Arena</option>
+		<option value="Dublin - Aviva Stadium">Dublin - Aviva Stadium</option>
+		<option value="Limerick - Radisson Hotel">Limerick - Radisson Hotel</option>
+		<option value="Galway - Racecourse">Galway - Racecourse</option>
+		</select>	</center>
+			
+
+		
+		<h2 class="heading">Contact Details</h2>
+	<p> Submit your contact details for text/email confirmation of your appointment </p></center>
+	
+	<input type="text" style="height:35px;" id="pps-input" placeholder="PPS" class="form-control" style="width:100%;" /><br/>
+		
+	<input type="text" style="height:35px;" id="name-input" placeholder="Name" class="form-control" style="width:100%;" /><br/>
+    	
+	<input type="text" style="height:35px;" id="email-input" placeholder="Email" class="form-control" style="width:100%;" /><br/>
+    	
+	<input type="text" style="height:35px;" id="phone-input" placeholder="Mobile number" class="form-control" style="width:100%;" /><br/>
+    	
+	<input type="text" style="height:35px;" id="address-input" placeholder="Eircode" class="form-control" style="width:100%;" /><br/>
+    	
+			
+	<h2 class="heading">Terms and conditions</h2>
+     <p> Please read and clarify the terms and conditions </p>
+	 <p> Appointments are based on age and risk grouping.  If you book a slot outside of your predefined time you will be refused a vaccine </p>
+
+<div class="tacbox">
+  <input id="checkbox" type="checkbox" />
+  <label for="checkbox"> I agree to these <a href="#">Terms and Conditions</a>.</label>	</br>	
+			
+			
+			<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
+			<!-- <button type="submit" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Submit</button> -->
+			
+			<input type="submit" onClick="submitToAPI(event)" class="btn btn-lg">
+			
+        </section>
+</form>
+        <script src="js/form.js"></script>
+    </body>
+</html>

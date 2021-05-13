@@ -1,0 +1,152 @@
+<!doctype html>
+<html class="no-js" lang="">
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Covax - Irelands Covid 19 Vaccine Booking System</title>
+
+   <link rel="stylesheet" href="css/font.css">
+   <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr.js"></script>
+  
+</head>
+ <div id="your-slider-selector" class="royalSlider">
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <a href="https://www2.hse.ie/screening-and-vaccinations/covid-19-vaccine/pfizer-biontech/overview.html">
+    <img src="images/Pfizer.png" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <a href="https://www2.hse.ie/screening-and-vaccinations/covid-19-vaccine/astrazeneca/overview.html">
+  <img src="images/astra.png" style="width:100%">
+  <div class="text"></div>
+</div>
+
+<div class="mySlides fade">
+  <div class="numbertext"></div>
+  <a href="https://www2.hse.ie/coronavirus/"><img src="images/virus_image1.JPG" style="width:100%"></a>
+  <div class="text"></div>
+</div>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+  <span class="dot"></span> 
+</div> 
+
+<script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}    
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";  
+  dots[slideIndex-1].className += " active";
+  setTimeout(showSlides, 3000); // Change image every 2 seconds
+}
+</script> 
+  
+<body class="page-home">
+
+  <header class="site-header">
+    <h1 class="title">Covax - Irelands Covid 19 Vaccine Booking System</h1>
+    <nav class="site-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="register.html">Register</a></li>
+        <li><a href="signin.html">Login</a></li>
+      </ul>
+    </nav>
+    <button type="button" class="btn-menu"><span>Menu</span></button>
+    <!-- <a class="home-button" href="register.html">Register</a> -->
+  </header>
+  
+  <!-- here -->
+
+
+  
+  
+  <table style="width:100%">
+  <tr>
+    <th><a href="https://covid-19.geohive.ie/pages/vaccinations">
+         <img alt="Vaccines Administered to Date" src="images/administered.jpg"
+         width=430" height="280"></a></th>
+    <th><a href="https://covidtracker.gov.ie/">
+         <img alt="Download the covid Tracker app" src="images/tracker.jpg"
+         width=430" height="280"></a></th>
+    <th><a href="https://covid-19.geohive.ie/pages/vaccinations">
+         <img alt="Vaccines Administered to Date" src="images/administered.jpg"
+         width=430" height="280"></a></th>
+  </tr>
+</table>
+  
+  
+  <section class="home-sign-up">
+    <div class="row column">
+      
+
+      <form onsubmit="javascript:void(0);">
+        <input type="email" placeholder="Enter your email address">
+        <button type="button">Submit</button>
+      </form>
+
+      <h2 class="section-title">Sign Up</h2>
+
+      <p class="content">Keep up to date on the latest Covid19 news by subscribing to our newsletter</p>
+
+      <div class="apps">
+        <a class="app-icon" href=""><img src="images/wr-home-apple.png"></a>
+        <a class="app-icon" href=""><img src="images/wr-home-google.png"></a>
+      </div>
+
+      <div class="social">
+        <a class="icon-fb" href="">Facebook</a>
+        <a class="icon-tw" href="">Twitter</a>
+        <a class="icon-ig" href="">Instagram</a>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="site-footer">
+    <div class="row column">
+      <nav class="footer-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="register.html">Register</a></li>
+          <li><a href="signin.html">Login</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="row column">
+      <div class="footer-legal">
+        &copy;CreedCorp Inc<br>
+        Some Rights Reserved
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/vendor.js"></script>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

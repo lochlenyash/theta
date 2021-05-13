@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+
+<head>
+
+<meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+
+        <link rel="stylesheet" href="css/font.css">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/index.css">
+        <link rel="stylesheet" href="/css/message.css">
+	
+	
+<script>
+function submitToAPI(e) {
+       e.preventDefault();
+//       var URL = "API Gateway";
+
+	   var age = document.getElementById("age-input").value;
+	   var length = document.getElementById("length-input").value;
+	   var pregnant = document.getElementById("pregnant-input").value;
+	   var hWorker = document.getElementById("hWorker-input").value;
+       var eduWorker = document.getElementById("eduWorker-input").value;
+	   var crowd = document.getElementById("crowd-input").value;
+	   var keyList = document.getElementById("keyList-input").value;
+	   var specList = document.getElementById("specList-input").value;
+	   var underlying = document.getElementById("underlying-input").value;
+	   var altList = document.getElementById("altList-input").value;
+	   
+	   
+	   if (age=="" && length=="" && pregnant=="" && hWorker=="" && eduWorker=="" && crowd=="" && keyList==""  && specList=="" && underlying=="" && altList=="")
+        {
+            alert("You must complete at least one field to get an appointment");
+            return false;
+        }
+		
+		<!-- nameRE = /^[A-Z]{1}[a-z]{2,20}[ ]{1}[A-Z]{1}[a-z]{2,20}/;
+		<!-- if(!nameRE.test(name)) {
+		<!-- 	alert("Name entered, is not valid");
+		<!-- 		return false;
+		<!-- } -->
+		
+		<!-- phoneRE = /^([0|\+[0-9]{1,5})?([7-9][0-9]{9})$/;
+		<!-- if(!phoneRE.test(phone)) {
+		<!-- 		alert("Phone number entered, is not valid");
+		<!-- 		return false;
+        <!--     }
+		
+		
+       var data = {
+          age : age,
+		  length : length,
+		  pregnant : pregnant,
+		  hWorker : hWorker,
+		  eduWorker : eduWorker,
+		  crowd : crowd,
+		  keyList : keyList,
+		  specList : specList,
+		  underlying : underlying,
+		  altList : altList
+        };
+
+		var xmlhttp = new XMLHttpRequest();
+		xmlhttp.open("POST", "https://zrdwb487pk.execute-api.eu-west-1.amazonaws.com/prod/contact");
+		xmlhttp.setRequestHeader("Content-Type", "application/json");
+		xmlhttp.send(JSON.stringify(data));
+		xmlhttp.onreadystatechange = function() {
+		if (xmlhttp.readyState === 4) {
+			var response = JSON.parse(xmlhttp.responseText);
+			if ((xmlhttp.status === 200 ) && (age >= 40 && age <= 50) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>Given a vaccination rate of 105,917 a week and an uptake of 74%, you should expect to receive your first dose of vaccine between 29/6/2021 and 6/7/2021.</h3>";
+		    } else if ((xmlhttp.status === 200 ) && (age >= 50 && age <= 60) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>Given a vaccination rate of 105,917 a week and an uptake of 74%, you should expect to receive your first dose of vaccine between 6/7/2021 and 7/7/2021.</h3>";
+			} else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else if ((xmlhttp.status === 200 ) && (age >= 70) && (length = "Yes")) {
+				console.log('successful');
+				document.getElementById("contact-form").innerHTML = "<h3>All the people in your group should have had their first dose of vaccine. If you haven't, you should get yours very soon.</h3>";
+			}
+			else {
+			    console.log('failed');
+			}
+		}
+	}
+	
+	document.getElementById('contact-form').reset();
+	  
+	} 
+</script>
+</head>
+<body>
+
+<!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div id="noCognitoMessage" class="configMessage" style="display: none;">
+            <div class="backdrop"></div>
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">No Cognito User Pool Configured</h3>
+                </div>
+                <div class="panel-body">
+                    <p>There is no user pool configured in <a href="/js/config.js">/js/config.js</a>. You'll configure this in Module 2 of the workshop.</p>
+                </div>
+            </div>
+        </div>
+
+        <header>
+          <img src="images/covax.jpg">
+        </header> 
+		
+		
+<form id="contact-form" method="post">
+
+		<table style="width:100%">
+  <tr>
+    <td><h4>Enter age here</h4>
+      <input type="age" style="height:35px;" id="age-input" placeholder="Yrs" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Long-term care facility resident/worker?</h4>
+      <input type="length" style="height:35px;" id="length-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Pregnant?</h4>
+      <input type="pregnant" style="height:35px;" id="pregnant-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+	
+  </tr>
+  
+  <tr>
+    <td><h4>Healthcare worker?</h4>
+      <input type="hWorker" style="height:35px;" id="hWorker-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Education sector worker?</h4>
+      <input type="eduWorker" style="height:35px;" id="eduWorker-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Living/working in crowded setting?</h4>
+	  <input type="crowd" style="height:35px;" id="crowd-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+
+  </tr>
+  <tr>
+    <td><h4>Does your work classify as key to the vaccination programme?</h4>
+      <input type="keyList" style="height:35px;" id="keyList-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Do you work in any of the sectors specified on <a href="https://www.omnicalculator.com/health/ireland-vaccine-queue#keyworkers">this list?</a></h4>
+      <input type="specList" style="height:35px;" id="specList-input" placeholder= "Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td><h4>Do you have any of the underlying health conditions on <a href="https://www.omnicalculator.com/health/ireland-vaccine-queue#veryatrisk">this list?</a></h4>
+      <input type="underlying" style="height:35px;" id="underlying-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+	
+  </tr>
+  
+  
+   <tr>
+    <td><h4>Or on <a href="https://www.omnicalculator.com/health/ireland-vaccine-queue#atrisk">this list?</a></h4>
+      <input type="altList" style="height:35px;" id="altList-input" placeholder="Yes/No" class="form-control" style="width:100%;" /><br/></td>
+    <td></td>
+    <td></td>
+	<td></td>
+  </tr>
+</table>
+	    
+	  
+	  <div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
+      <button type="button" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Submit</button>
+</form>
+<br/>
+<br/>
+<br/>
+<table style="width:100%">
+  <tr>
+    <td>55577855</td>
+  </tr>
+</table>
+
+</body>
+</html>
